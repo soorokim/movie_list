@@ -1,0 +1,12 @@
+.form-wrapper {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.logo {
+  text-align: right;
+  font-size: 20pt;
+  font-weight: bolder;
+  font-family: cursive;
+  color: pink;
+}
