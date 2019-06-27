@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Movie from './Movie'
-import { AppActions } from "../reducers/app"
+import { AppActions } from "../../reducers/app"
 import { Row } from "reactstrap"
 
 class MovieList extends Component {
   componentDidMount() {
     this.props.movieListRequest()
     window.addEventListener('scroll', this.infinitiScroll, true)
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.infinitiScroll, true)
   }
 
   infinitiScroll = () => {
@@ -16,7 +19,6 @@ class MovieList extends Component {
     let clientHeight = document.documentElement.clientHeight;
 
      if (scrollTop + clientHeight === scrollHeight) {
-       console.log(this.props.nextPage)
        if(this.props.nextPage){
          this.props.movieListRequest()
        }

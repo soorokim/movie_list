@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import MovieListTemplate from './components/MovieListTemplate'
-import MovieList from './components/MovieList'
-import SearchForm from './components/SearchForm'
+
+import {Switch, Route, Router} from "react-router-dom"
+
+import Root from './pages/routers/Root'
 
 class App extends Component {
   render() {
+      console.log(this)
     return (
-      <MovieListTemplate
-        form={(
-          <SearchForm />
-        )}>
-        <MovieList/>
-      </MovieListTemplate>
-    );
+      <Router history={this.props.history}>
+        <Root/>
+      </Router>
+    )
   }
 }
-
 export default App;

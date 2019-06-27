@@ -4,8 +4,12 @@ import { Col, Row, Container, InputGroup
         , Input, Button, InputGroupAddon
         , CustomInput, Label, Form
         , FormGroup } from 'reactstrap'
+import autoBind from 'react-autobind'
+
+import { Link } from 'react-router-dom'
+
 import './SearchForm.css'
-import { AppActions } from "../reducers/app"
+import { AppActions } from "../../reducers/app"
 import YearOption from './YearOption'
 import GenreOption from './GenreOption'
 
@@ -13,10 +17,7 @@ import GenreOption from './GenreOption'
 class SearchForm extends Component {
   constructor(props){
     super(props);
-    this._handleSortChange = this._handleSortChange.bind(this);
-    this._handleSubmit = this._handleSubmit.bind(this);
-    this._handleGenreChange = this._handleGenreChange.bind(this);
-    this._handleYearChange = this._handleYearChange.bind(this);
+    autoBind(this)
   }
 
     _handleSubmit(e){
@@ -39,6 +40,7 @@ class SearchForm extends Component {
       this.props.sortChange(e.target.value)
       this.props.movieListRequest()
     }
+
     render() {
       const genreList = ["드라마", "판타지", "서부", "공포", "멜로/로맨스", "모험",
       "스릴러", "느와르", "컬트", "다큐멘터리", "코미디", "가족", "미스터리",
@@ -104,6 +106,11 @@ class SearchForm extends Component {
                     </CustomInput>
                 </Col>
                 <Col md="1">
+                    <Link to="/chart">
+                      <Button style={{border:"2px solid pink", backgroundColor:"pink",color:"white"}}>
+                          통계 보기
+                      </Button>
+                    </Link>
                 </Col>
             </Row>
           </Form>
