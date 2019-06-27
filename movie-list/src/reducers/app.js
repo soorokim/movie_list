@@ -45,7 +45,7 @@ export const INITIAL_STATE = {
   page: 1,
   genre: "",
   year: "",
-  sort: "rate",
+  sort: "-rate",
   search: "",
 }
 

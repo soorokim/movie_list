@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 
 
-import App from './App';
+import Root from './pages/routers/Root';
 
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { store } from "./store";
 import createHistory from 'history/createBrowserHistory';
+export const history = createHistory();
 
-
-const history = createHistory();
+import App from "./App"
+import { store } from "./store";
 
 const render = Component => {
   ReactDOM.render(

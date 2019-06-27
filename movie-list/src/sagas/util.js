@@ -29,8 +29,6 @@ export function autoRestart(generator) {
                 }
 
                 count += 1;
-
-                //yield delay(3000);
             }
         }
 

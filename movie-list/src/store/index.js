@@ -14,24 +14,15 @@ const middlewares = [
     logger,
 ];
 
-//TODO: 뭔지 모름
+//개발자도구
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-//TODO: 뭔지 모름
 const enhancers = composeEnhancers(applyMiddleware(...middlewares));
 
 function configureStore() {
     const store = createStore(rootReducer, enhancers);
 
     sagaMiddleware.run(rootSaga);
-
-    /*//TODO: 뭔지 모름 hot loader 를 사용하지 않음 ( 사용할줄 모름 )
-    if (module.hot) {
-        module.hot.accept('reducers', () => {
-            store.replaceReducer(require('reducers').default)
-        })
-    }
-    */
 
     return store;
 }
