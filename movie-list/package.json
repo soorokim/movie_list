@@ -6,6 +6,8 @@
     "apisauce": "^1.0.2",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
+    "echarts": "^4.2.1",
+    "echarts-for-react": "^2.0.15-beta.0",
     "history": "^4.9.0",
     "immutability-helper": "^3.0.1",
     "query-string": "^6.8.1",

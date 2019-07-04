@@ -9,6 +9,13 @@ const { Types, Creators } = createActions({
     genreChange: ['data'],
     yearChange: ['data'],
     searchChange: ['data'],
+    chartRequest: ['data'],
+    chartSuccess: ['data'],
+    chartFail: ['data'],
+    selectChart: ['data'],
+    detailChartRequest: ['data'],
+    detailChartSuccess: ['data'],
+    detailChartFail: ['data'],
 })
 
 export const AppTypes = Types;
@@ -47,6 +54,15 @@ export const INITIAL_STATE = {
   year: "",
   sort: "-rate",
   search: "",
+  chartOption:{
+    data: {},
+    ...ACTION_STATE.init
+  },
+  detailChart: {
+    select: "",
+    monthlyChart: {},
+    genreChart: {},
+  }
 }
 
 export default createReducer(INITIAL_STATE, {
@@ -64,7 +80,7 @@ export default createReducer(INITIAL_STATE, {
         movieList: {
           $set: {
             data: state.movieList.data.concat(data.results),
-            ...ACTION_STATE.request,
+            ...ACTION_STATE.success,
           }
         },
         page: {
@@ -128,6 +144,69 @@ export default createReducer(INITIAL_STATE, {
             },
             page: { $set:1 },
             search: { $set:data }
+        })
+    ),
+    [Types.CHART_REQUEST]: (state, {data}) => (
+        update(state, {
+            chartOption: {
+              $set: {
+                data: data,
+                ...ACTION_STATE.request,
+              }
+            },
+        })
+    ),
+    [Types.CHART_SUCCESS]: (state, {data}) => (
+      update(state, {
+        chartOption: {
+          $set: {
+            data: data,
+            ...ACTION_STATE.success,
+          }
+        },
+      })
+    ),
+    [Types.CHART_FAIL]: (state, {data}) => (
+        update(state, {
+            chartOption: {
+                $set: {
+                    data: data,
+                    ...ACTION_STATE.fail
+                }
+            },
+        })
+    ),
+    [Types.DETAIL_CHART_REQUEST]: (state, {data}) => (
+        update(state, {
+          detailChart: {
+            $set: {
+              select: data,
+              monthlyChart: {},
+              genreChart: {},
+            }
+          }
+        })
+    ),
+    [Types.DETAIL_CHART_SUCCESS]: (state, {data}) => (
+      update(state, {
+          detailChart: {
+            $set: {
+              select: state.detailChart.select,
+              monthlyChart: data.monthlyChart,
+              genreChart: data.genreChart,
+            }
+          }
+      })
+    ),
+    [Types.DETAIL_CHART_FAIL]: (state, {data}) => (
+        update(state, {
+          detailChart: {
+            $set: {
+              select: data,
+              monthlyChart: {},
+              genreChart: {},
+            }
+          }
         })
     ),
 })
