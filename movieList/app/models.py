@@ -8,7 +8,7 @@ class Actor(models.Model):
 class Genre(models.Model):
     id = models.CharField(max_length=10, primary_key=True)
     genre = models.CharField(max_length=100)
-# Create your models here.
+    
 class Movie(models.Model):
     id = models.CharField(max_length=10, primary_key=True)
     title = models.CharField(max_length=100)

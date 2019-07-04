@@ -7,7 +7,6 @@ class MovieFilter(FilterSet):
     year = CharFilter(field_name='releaseDate', lookup_expr='icontains')
     search = CharFilter(method="search_movie")
     sort = CharFilter(method="sort_movie")
-    #genre = CharFilter(field_name='genres__genre', lookup_expr='icontains')
 
     def search_movie(self, qs, name, value):
         return qs.filter(
@@ -18,7 +17,6 @@ class MovieFilter(FilterSet):
         | Q(actors__enName__icontains=value)#배우 영어 이름
         | Q(director__icontains=value)      #감독
         ).distinct()
-
 
     def sort_movie(self, qs, name, value):
         return qs.order_by(value)
