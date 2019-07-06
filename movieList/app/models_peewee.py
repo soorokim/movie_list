@@ -1,6 +1,6 @@
 from peewee import *
 
-db = MySQLDatabase('movie_list_proj', user='movie_lover', password='movie', host='localhost', port=3306)
+db = MySQLDatabase('movie_list_proj', user='movie_lover', password='movie', host='172.20.0.2', port=3306)
 
 class BaseModel(Model):
     class Meta:
@@ -47,4 +47,4 @@ class App_Movie_Actors(BaseModel):
 
 MovieActorDeferred.set_model(App_Movie_Actors)
 MovieGenreDeferred.set_model(App_Movie_Genres)
-db.connect()
+#db.connect()

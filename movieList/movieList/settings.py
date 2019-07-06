@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'movie_list_proj',
         'USER': 'movie_lover',
         'PASSWORD': 'movie',
-        'HOST': 'localhost',
+        'HOST': '172.20.0.2',
         'PORT': '3306'
     }
 }

@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    container_name: movielist_db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "movie_list_proj"
+      MYSQL_USER: "movie_lover"
+      MYSQL_PASSWORD: "movie"
+    ports:
+      - "7001:3306"
+  back:
+    command: bash
+    container_name: movielist_back
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    image: ubuntu:16.04
+    ports:
+      - "7002:8000"
