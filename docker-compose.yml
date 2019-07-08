@@ -13,7 +13,7 @@ services:
     ports:
       - "7001:3306"
   back:
-    command: bash
+    command: ['/code/venv/bin/python', 'manage.py', 'runserver', '0.0.0.0:8000']
     container_name: movielist_back
     depends_on:
       - db

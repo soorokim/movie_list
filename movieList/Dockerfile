@@ -9,7 +9,6 @@ ENV LC_ALL ko_KR.UTF-8
 #파일 복사하기
 RUN mkdir /code
 WORKDIR /code
-ADD ./movieList /code/movieList
 
 #vim설치
 RUN apt-get update
@@ -23,9 +22,14 @@ RUN apt-get update
 RUN apt-get install -y python3.6
 RUN apt-get install -y python3.6-dev libmysqlclient-dev build-essential
 RUN virtualenv -p python3.6 venv
-RUN source venv/bin/activate
+RUN /bin/bash -c "source /code/venv/bin/activate"
 
 #패키지 설치
-WORKDIR /code
+RUN mkdir /movieList
 ADD requirements.txt /code
-RUN pip install -r requirements.txt
+RUN /code/venv/bin/pip install -r requirements.txt
+ADD . /code/movieList
+
+
+WORKDIR /code/movieList
+#RUN /code/venv/bin/python /code/movieList/manage.py migrate
