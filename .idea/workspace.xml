@@ -5,7 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-list/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-list/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-list/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-list/src/components/chart/ChartIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/src/components/chart/ChartIndex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-list/src/components/main/MovieList.js" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/src/components/main/MovieList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieList/app/models_peewee.py" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/app/models_peewee.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

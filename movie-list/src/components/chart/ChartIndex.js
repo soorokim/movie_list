@@ -17,6 +17,7 @@ class Detail extends Component {
       this.props.chartRequest()
     }
 
+    // eslint-disable-next-line no-undef
     onChartClick = (param, echarts) => {
       this.props.detailChartRequest(param.name)
     }

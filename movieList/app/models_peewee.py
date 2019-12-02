@@ -1,6 +1,6 @@
 from peewee import *
 
-db = SqliteDatabase('/Users/BIGTREE/PycharmProjects/movieList/movieList/db.sqlite3', prgmas={
+db = SqliteDatabase('/Users/BIGTREE/PycharmProjects/movieList/movieList/db.sqlite3', pragmas={
     'journal_mode': 'wal',
     'cache_size': -1024 * 64})
 

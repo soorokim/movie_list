@@ -13,6 +13,7 @@ class MovieList extends Component {
     window.removeEventListener('scroll', this.infinitiScroll, true)
   }
 
+  // eslint-disable-next-line no-undef
   infinitiScroll = () => {
     let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
     let scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
