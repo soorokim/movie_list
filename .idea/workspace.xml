@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cb79df8-6951-4bd0-8418-ca430f9d14d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/movie-list.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/movie-list.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-list/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieList/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieList/app/models_peewee.py" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/app/models_peewee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieList/crawler/movieCrawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/crawler/movieCrawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieList/movieList/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/movieList/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieList/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/movieList/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-list/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-list/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/movie-list/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +156,7 @@
       <workItem from="1562201914890" duration="389000" />
       <workItem from="1562303503872" duration="202000" />
       <workItem from="1575014893712" duration="7943000" />
-      <workItem from="1575249041719" duration="1327000" />
+      <workItem from="1575249041719" duration="2815000" />
     </task>
     <servers />
   </component>
