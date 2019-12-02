@@ -1,6 +1,8 @@
 from peewee import *
 
-db = MySQLDatabase('movie_list_proj', user='movie_lover', password='movie', host='172.20.0.2', port=3306)
+db = SqliteDatabase('/Users/BIGTREE/PycharmProjects/movieList/movieList/db.sqlite3', prgmas={
+    'journal_mode': 'wal',
+    'cache_size': -1024 * 64})
 
 class BaseModel(Model):
     class Meta:
@@ -28,6 +30,7 @@ class App_Movie(BaseModel):
     URL = TextField()
     director = CharField(max_length=30)
     story = TextField()
+    favorite = SmallIntegerField(default=0)
     genres = ManyToManyField(App_Genre, backref="movie_list", through_model=MovieGenreDeferred)
     actors = ManyToManyField(App_Actor, backref="movie_list", through_model=MovieActorDeferred)
 

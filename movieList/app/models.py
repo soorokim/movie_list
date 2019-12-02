@@ -19,5 +19,6 @@ class Movie(models.Model):
     URL = models.TextField()
     director = models.CharField(max_length=30)
     story = models.TextField()
+    favorite = models.SmallIntegerField(default=0)
     genres = models.ManyToManyField(Genre, related_name="movie_list", blank=True)
     actors = models.ManyToManyField(Actor, related_name="movie_list", blank=True)

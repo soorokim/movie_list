@@ -15,7 +15,7 @@ import re
 Django ORM 사용하기
 '''
 import os
-sys.path.insert(0, '/code/movieList')
+sys.path.insert(0, '/Users/BIGTREE/PycharmProjects/movieList/movieList')
 # Python이 실행될 때 DJANGO_SETTINGS_MODULE이라는 환경 변수에 현재 프로젝트의 settings.py파일 경로를 등록합니다.
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "movieList.settings")
 # 이제 장고를 가져와 장고 프로젝트를 사용할 수 있도록 환경을 만듭니다.
@@ -179,9 +179,6 @@ def get_movie_detail(detail_url) :
     if actors:
         put_actors_info(actors, movie)
     put_genres_info(genres, movie)
-    '''
-    '''
-
 
     print(title+": success!!")
     return True
