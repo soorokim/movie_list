@@ -16,7 +16,8 @@ const { Types, Creators } = createActions({
     detailChartRequest: ['data'],
     detailChartSuccess: ['data'],
     detailChartFail: ['data'],
-})
+    changeFavoriteRequest: ['data'],
+});
 
 export const AppTypes = Types;
 export const AppActions = Creators;
@@ -62,6 +63,9 @@ export const INITIAL_STATE = {
     select: "",
     monthlyChart: {},
     genreChart: {},
+  },
+  changeFavorite: {
+    id: "",
   }
 }
 
@@ -209,4 +213,16 @@ export default createReducer(INITIAL_STATE, {
           }
         })
     ),
+  [Types.CHANGE_FAVORITE_REQUEST]: (state, { data }) => {
+    console.log(data.id)
+    return (
+      update(state, {
+        changeFavorite: {
+          $set: {
+            id: data
+          }
+        }
+      })
+    )
+  }
 })

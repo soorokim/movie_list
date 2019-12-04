@@ -26,6 +26,8 @@ router.register(r'movie-list', MovieListViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('chart/', views.chart, name='chart'),
-    path('detail-chart/', views.detail_chart, name='chart'),
+    path('movie-list/', views.chart, name='chart'),
+    path('detail-chart/', views.detail_chart, name='detail_chart'),
+    path('change_favorite/', views.change_favorite, name='change_favorite'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

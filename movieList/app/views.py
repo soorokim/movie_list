@@ -172,3 +172,11 @@ def detail_chart(request):
     #'monthData':monthData,
     #'genreData':genreData
     return JsonResponse(data, safe=False)
+
+def change_favorite(request):
+    movieId = request.GET.get('id')
+    data = Movie.objects.get(id=movieId)
+    data.favorite = not data.favorite
+    data.save()
+
+    return JsonResponse({200:'ok'}, safe=False)

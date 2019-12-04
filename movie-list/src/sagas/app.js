@@ -20,6 +20,7 @@ const makeRequestURL= (state) => {
   requestURL += `page=${state.page}`
   return requestURL
 }
+
 export default function* root() {
     yield all([
         takeEvery(AppTypes.MOVIE_LIST_REQUEST, function* movieListRequest({data}) {
@@ -45,7 +46,7 @@ export default function* root() {
                 yield put(AppActions.chartFail(response.data));
             }
         }),
-        takeEvery(AppTypes.DETAIL_CHART_REQUEST, function* chartRequest({data}) {
+        takeEvery(AppTypes.DETAIL_CHART_REQUEST, function* DetailChartRequest({data}) {
             const state = yield select(getState)
 
             const DETAIL_CHART_URL = '/detail-chart/?year='+state.detailChart.select
@@ -56,6 +57,13 @@ export default function* root() {
             } else {
                 yield put(AppActions.detailChartFail(response.data));
             }
+        }),
+        takeEvery(AppTypes.CHANGE_FAVORITE_REQUEST, function* ChangeFavoriteRequest({data}) {
+            const state = yield select(getState)
+
+            const CHANGE_FAVORITE_URL = '/change_favorite/?id=' + state.changeFavorite.id
+
+            yield call(Api.genericCRUD, "select", CHANGE_FAVORITE_URL);
         }),
     ])
 }
