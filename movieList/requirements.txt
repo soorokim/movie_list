@@ -1,17 +1,18 @@
+-i https://pypi.org/simple/
 certifi==2019.6.16
 chardet==3.0.4
 cssselect==1.0.3
-Django==2.2.2
 django-cors-headers==3.0.2
 django-filter==2.1.0
 django-filters==0.2.1
+django==2.2.13
 djangorestframework==3.9.4
 idna==2.8
 lxml==4.3.4
 numpy==1.16.4
 pandas==0.24.2
 peewee==3.9.6
-PyMySQL==0.9.3
+pymysql==0.9.3
 python-dateutil==2.8.0
 pytz==2019.1
 requests==2.22.0
